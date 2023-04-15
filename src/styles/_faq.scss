@@ -1,0 +1,59 @@
+.faq{
+    
+    padding: 2.5rem 1.5rem;
+
+    h1{
+        text-align: center;
+    }
+
+    &__list{
+        max-width: 815px;
+        margin: 50px auto;
+        font-size: 1.2rem;
+
+        &__question,
+        &__answer{
+            background-color: #4D5057;
+        }
+
+        &__question{
+            margin-top: 8px;
+            margin-bottom: 1px;
+            padding: 20px 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        &__question::after{
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background: url("../../dist/images/fechar.svg") no-repeat center center;
+            transform: rotate(45deg);
+        }
+
+        &__question.active::after{
+            transform: rotate(0deg);
+        }
+
+        &__answer > div{
+            padding: 30px;
+            
+        }
+
+        &__answer{
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.25s cubic-bezier(0.5, 0, 0.1, 1);
+        }
+
+
+        &__answer.active{
+            max-height: 1200px;
+            
+        }
+    }
+}
